@@ -1,48 +1,27 @@
-
 //animação sidebar
-document.querySelectorAll("#Close-menu").forEach(function(element) {
+document.querySelectorAll(".js-toggle-menu").forEach(function(element) {
     element.addEventListener("click", () =>{
         document.querySelector(".container").classList.toggle("show-menu")
     })
 })
 
-//infoModal
-document.getElementById("button-banner").addEventListener("click", function() {
-    document.getElementById("infoModal").style.display = "block";
-});
-
-document.querySelector(".close").addEventListener("click", function() {
-    document.getElementById("infoModal").style.display = "none";
-});
-
-
-
-// orçamento
-document.querySelector("#qtde").addEventListener("change", atualizarPreco)
-document.querySelector("#js").addEventListener("change", atualizarPreco)
-document.querySelector("#layout-sim").addEventListener("change", atualizarPreco)
-document.querySelector("#layout-nao").addEventListener("change", atualizarPreco)
-
-document.querySelector("#prazo").addEventListener("change", function () {
-    const prazo = document.querySelector("#prazo").value
-    document.querySelector("label[for=prazo]").innerHTML = `Prazo: ${prazo} semanas` 
-    atualizarPreco()
+// modais (sobre mim e projetos)
+document.querySelectorAll("[data-modal]").forEach(function(button) {
+    button.addEventListener("click", () => {
+        document.getElementById(button.dataset.modal).showModal()
+    })
 })
 
-function atualizarPreco(){
-    const qtde = document.querySelector("#qtde").value
-    const temJS = document.querySelector("#js").checked
-    const incluiLayout = document.querySelector("#layout-sim").checked
-    const prazo = document.querySelector("#prazo").value
+document.querySelectorAll(".project-modal").forEach(function(modal) {
+    modal.querySelectorAll(".project-modal-close, .js-close-modal").forEach(function(button) {
+        button.addEventListener("click", () => modal.close())
+    })
 
-    let preco = qtde * 100;
-    if (temJS) preco *= 1.1
-    if (incluiLayout) preco += 500
-    let taxaUrgencia = 1 - prazo*0.1;
-    preco *= 1 + taxaUrgencia
-
-    document.querySelector("#preco").innerHTML = `R$ ${preco.toFixed(2)}`
-}
+    // fecha ao clicar fora do conteúdo
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) modal.close()
+    })
+})
 
 
 
@@ -75,7 +54,7 @@ function animeScroll() {
         } else {
             element.classList.remove(animationClass)
         }
-        
+
     })
 }
 
@@ -84,9 +63,3 @@ if(target.length) {
         animeScroll()
     },10))
 }
-
-
-
-
-
-

@@ -17,7 +17,7 @@
     
     <div class="container">
 
-        <div class="hamburguer" id="Close-menu">
+        <div class="hamburguer js-toggle-menu">
             <div class="line" id="line1"></div>
             <div class="line" id="line2"></div>
             <div class="line" id="line3"></div>
@@ -30,40 +30,72 @@
             </div>
             <div class="banner">    
                 <h1 class="title-style">David Denis</h1>  
-                <p>Desenvolvedor Full-Stack</p>
-                <button class="ButtonCustom" id="button-banner">Saiba mais</button>
-            </div> 
-            
-            <div id="infoModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-                </div>
+                <p>Engenharia de Software · Ciência de Dados</p>
+                <button class="ButtonCustom" id="button-banner" type="button" data-modal="modal-sobre">Saiba mais</button>
             </div>
-            
+
+            <dialog class="project-modal about-modal" id="modal-sobre" aria-labelledby="modal-sobre-title">
+                <button class="project-modal-close" type="button" aria-label="Fechar">&times;</button>
+
+                <div class="about-header">
+                    <div class="about-avatar" aria-hidden="true">DD</div>
+                    <div>
+                        <h2 id="modal-sobre-title">David Denis</h2>
+                        <p class="about-role">Estudante de Ciência da Computação · UNIP</p>
+                        <span class="about-status">Aberto a vagas júnior</span>
+                    </div>
+                </div>
+
+                <div class="about-story">
+                    <p>Sou estudante de Ciência da Computação e gosto de transformar problemas reais em software bem construído. Comecei pelo desenvolvimento web e, com o tempo, percebi que o que mais me motiva é o caminho completo: entender o problema, modelar os dados, escrever código testável e entregar algo que as pessoas consigam usar.</p>
+                    <p>Na <strong>Iniciação Científica</strong>, isso virou o <strong>Emergy Analysis</strong>, uma ferramenta que calcula indicadores de sustentabilidade a partir de inventários de fluxos. Foi ali que juntei as duas áreas que quero seguir: a análise de dados, com Python e pandas, e a engenharia de software, com arquitetura em pacotes, testes automatizados e integração contínua.</p>
+                    <p>Nos outros projetos explorei o resto da stack: uma API REST em Java com Spring Boot no <strong>EcoGrid</strong> e um dashboard em tempo real com Vue e TypeScript no <strong>Crypto Dashboard</strong>.</p>
+                    <p>Hoje busco uma oportunidade como <strong>Engenheiro de Software Júnior</strong> ou <strong>Cientista de Dados Júnior</strong>, em um time onde eu possa aprender rápido e contribuir com código limpo, testado e orientado a dados.</p>
+                </div>
+
+                <div class="about-areas">
+                    <div class="about-area">
+                        <h3><i class="fa-solid fa-code"></i> Engenharia de Software</h3>
+                        <ul>
+                            <li>APIs REST e arquitetura em camadas</li>
+                            <li>Testes automatizados e CI/CD</li>
+                            <li>Java, Python e TypeScript</li>
+                        </ul>
+                    </div>
+                    <div class="about-area">
+                        <h3><i class="fa-solid fa-chart-line"></i> Ciência de Dados</h3>
+                        <ul>
+                            <li>Tratamento e análise com pandas</li>
+                            <li>Visualização com Plotly e Streamlit</li>
+                            <li>Modelagem e persistência com SQL</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="about-actions">
+                    <a class="ButtonSend js-close-modal" href="#projetos">Ver projetos</a>
+                    <a class="ButtonSend ButtonSend--outline" href="https://github.com/daviddeniss" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                    <a class="ButtonSend ButtonSend--outline" href="https://www.linkedin.com/in/david-denis-c-4490b6132/" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                </div>
+            </dialog>
+
 
         </header>
 
         <aside class="sidebar">
             <nav>
                 <ul class="menu">
-                    <li id="menu-1" class="menu-item"><a id="Close-menu" href="#" class="menu-link">home</a></li>
-                    <li id="menu-2" class="menu-item"><a id="Close-menu" href="#conhecimentos" class="menu-link">conhecimentos</a></li>
-                    <li id="menu-3" class="menu-item"><a id="Close-menu" href="#projetos" class="menu-link">projetos</a></li>
-                    <li id="menu-4" class="menu-item"><a id="Close-menu" href="#contato" class="menu-link">contato</a></li>
-                    <li id="menu-5" class="menu-item"><a id="Close-menu" href="#orcamento" class="menu-link">orçamento</a></li>
-                    
-                    
+                    <li id="menu-1" class="menu-item"><a href="#" class="menu-link js-toggle-menu">home</a></li>
+                    <li id="menu-2" class="menu-item"><a href="#conhecimentos" class="menu-link js-toggle-menu">conhecimentos</a></li>
+                    <li id="menu-3" class="menu-item"><a href="#projetos" class="menu-link js-toggle-menu">projetos</a></li>
+                    <li id="menu-4" class="menu-item"><a href="#contato" class="menu-link js-toggle-menu">contato</a></li>
                 </ul>
             </nav>
             <div class="social-media">
-                <a id="social-1" href="https://github.com/daviddeniss" target="_blank">
+                <a id="social-1" href="https://github.com/daviddeniss" target="_blank" rel="noopener" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a id="social-2" href="https://www.instagram.com/seu-usuario" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a id="social-3" href="https://www.linkedin.com/in/david-denis-c-4490b6132/" target="_blank">
+                <a id="social-2" href="https://www.linkedin.com/in/david-denis-c-4490b6132/" target="_blank" rel="noopener" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
@@ -131,145 +163,188 @@
                     </div>
                 </div>
                 <div class="imagemFundo">
-                    <i class="fa-solid fa-laptop-code"></i>                
+                    <i class="fa-solid fa-laptop-code"></i>
                 </div>
+            </div>
         </section>
-        <section class="sessao-projetos" id="projetos" >
+        <section class="sessao-projetos" id="projetos">
             <div class="projetos-header">
                 <h1>Projetos</h1>
             </div>
             <div class="cards">
-                <div class="card" data-anime="up">
+                <article class="card" data-anime="up">
                     <div class="card-img-wrapper">
-                        <img src="./media/proj1.jpg" alt="">
+                        <img src="./media/emergy.webp" alt="Diagrama da arquitetura do Emergy Analysis Pipeline, da extração dos dados ao armazenamento" loading="lazy" width="960" height="600">
                     </div>
-                    <div class="background">
-                        <div class="card-info">
-                            <h2>projeto1</h2>
-                            <h3>HTML, CSS</h3>
-                            <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea, doloremque maiores. Sequi quam, sit sapiente amet debitis. </P>
-                            <button class="ButtonSend">Saiba mais</button>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>Emergy Analysis</h2>
+                            <span class="card-badge">Iniciação Científica</span>
+                        </div>
+                        <ul class="tags">
+                            <li>Python</li>
+                            <li>pandas</li>
+                            <li>Streamlit</li>
+                            <li>SQLAlchemy</li>
+                            <li>pytest</li>
+                        </ul>
+                        <p>Ferramenta científica de avaliação emergética: calcula a emergia de cada fluxo, os totais R/N/F e os índices de sustentabilidade (EYR, ELR, EIR, ESI), com CLI e app web.</p>
+                        <div class="card-actions">
+                            <a class="ButtonSend" href="https://github.com/daviddeniss/Emergy-Analysis-Pipeline" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código</a>
+                            <button class="ButtonSend ButtonSend--outline" type="button" data-modal="modal-emergy">Saiba mais</button>
                         </div>
                     </div>
-                </div>
-                <div class="card" data-anime="up">
-                    <div class="card-img-wrapper">
-                        <img src="./media/proj2.jpg" alt="">
-                    </div>
-                    <div class="background">
-                        <div class="card-info">
-                            <h2>projeto2</h2>
-                            <h3>HTML, CSS</h3>
-                            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur placeat necessitatibus. </P>
-                            <button class="ButtonSend">Saiba mais</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" data-anime="up">
-                    <div class="card-img-wrapper">
-                        <img src="./media/proj3.jpg" alt="">
-                    </div>
-                    <div class="background">
-                        <div class="card-info">
-                            <h2>projeto3</h2>
-                            <h3>HTML, CSS</h3>
-                            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis provident debitis. </P>
-                            <button class="ButtonSend">Saiba mais</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </article>
 
-        
+                <article class="card" data-anime="up">
+                    <div class="card-img-wrapper">
+                        <img src="./media/crypto-dashboard.webp" alt="Tela do Crypto Dashboard com a lista de criptomoedas e o gráfico de preço do Bitcoin" loading="lazy" width="960" height="600">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>Crypto Dashboard</h2>
+                        </div>
+                        <ul class="tags">
+                            <li>Vue 3</li>
+                            <li>TypeScript</li>
+                            <li>Pinia</li>
+                            <li>WebSocket</li>
+                            <li>Vitest</li>
+                        </ul>
+                        <p>Dashboard de criptomoedas em tempo real, com preços via WebSocket da Binance, gráficos históricos, favoritos e alertas de preço.</p>
+                        <div class="card-actions">
+                            <a class="ButtonSend" href="https://github.com/daviddeniss/Crypto-Dashboard" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código</a>
+                            <button class="ButtonSend ButtonSend--outline" type="button" data-modal="modal-crypto">Saiba mais</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card" data-anime="up">
+                    <div class="card-img-wrapper">
+                        <img src="./media/ecogrid.webp" alt="Painel do EcoGrid Management com a pegada de carbono do mês, uso do teto e recomendações de mitigação" loading="lazy" width="960" height="600">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h2>EcoGrid Management</h2>
+                            <span class="card-badge">Projeto acadêmico</span>
+                        </div>
+                        <ul class="tags">
+                            <li>Java</li>
+                            <li>Spring Boot</li>
+                            <li>JPA</li>
+                            <li>JavaFX</li>
+                            <li>JUnit</li>
+                        </ul>
+                        <p>Plataforma de eficiência energética: uma API REST calcula a pegada de carbono (tCO₂e) das empresas, audita o teto de emissões e sugere ações alinhadas à ISO 14001.</p>
+                        <div class="card-actions">
+                            <a class="ButtonSend" href="https://github.com/daviddeniss/EcoGrid-Management" target="_blank" rel="noopener"><i class="fab fa-github"></i> Código</a>
+                            <button class="ButtonSend ButtonSend--outline" type="button" data-modal="modal-ecogrid">Saiba mais</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <dialog class="project-modal" id="modal-emergy" aria-labelledby="modal-emergy-title">
+                <button class="project-modal-close" type="button" aria-label="Fechar">&times;</button>
+                <h2 id="modal-emergy-title">Emergy Analysis</h2>
+                <p>Projeto de Iniciação Científica para avaliação emergética de sistemas a partir de inventários de fluxos.</p>
+                <ul>
+                    <li>Monorepo com 3 pacotes (uv workspace): biblioteca, CLI e aplicação web</li>
+                    <li><strong>emergy-core</strong>: núcleo científico reutilizável com pandas, Pydantic e SQLAlchemy</li>
+                    <li>CLI <code>emergy</code> com Typer + Rich e app interativo em Streamlit + Plotly</li>
+                    <li>CLI e web usam o mesmo núcleo, então a mesma entrada sempre gera o mesmo resultado</li>
+                    <li>Lê inventários CSV/XLSX e converte UEVs entre baselines (GEB2016, GEB2000…)</li>
+                    <li>Testes com pytest e Hypothesis, CI, pre-commit e Docker</li>
+                </ul>
+                <a class="ButtonSend" href="https://github.com/daviddeniss/Emergy-Analysis-Pipeline" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver no GitHub</a>
+            </dialog>
+
+            <dialog class="project-modal" id="modal-crypto" aria-labelledby="modal-crypto-title">
+                <button class="project-modal-close" type="button" aria-label="Fechar">&times;</button>
+                <h2 id="modal-crypto-title">Crypto Dashboard</h2>
+                <p>Acompanhamento do mercado de criptomoedas em tempo real, usando a API do CoinGecko e o WebSocket da Binance.</p>
+                <ul>
+                    <li>Top 100 moedas com busca, ordenação e filtro de favoritos</li>
+                    <li>Preços ao vivo via WebSocket, assinando só as moedas visíveis, favoritas ou com alerta</li>
+                    <li>Gráficos de 24h a 1 ano com Chart.js</li>
+                    <li>Alertas de preço com notificação do sistema</li>
+                    <li>Tema claro/escuro, mobile first e acessibilidade (contraste AA)</li>
+                    <li>Reconexão com backoff exponencial e cache com TTL</li>
+                    <li>Testes com Vitest + MSW e CI no GitHub Actions</li>
+                </ul>
+                <a class="ButtonSend" href="https://github.com/daviddeniss/Crypto-Dashboard" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver no GitHub</a>
+            </dialog>
+
+            <dialog class="project-modal" id="modal-ecogrid" aria-labelledby="modal-ecogrid-title">
+                <button class="project-modal-close" type="button" aria-label="Fechar">&times;</button>
+                <h2 id="modal-ecogrid-title">EcoGrid Management</h2>
+                <p>Trabalho acadêmico (APS, UNIP): gestão de eficiência energética e pegada de carbono.</p>
+                <ul>
+                    <li>Arquitetura cliente-servidor: API REST em Spring Boot + cliente desktop em JavaFX</li>
+                    <li>Camadas Controller → Service → Repository com Spring Data JPA</li>
+                    <li>H2 em desenvolvimento e PostgreSQL em produção, só trocando a configuração</li>
+                    <li>Chamadas assíncronas com <code>HttpClient</code> + <code>CompletableFuture</code>, sem travar a interface</li>
+                    <li>Auditoria ISO 14001, recomendações por fonte e simulação de créditos de carbono</li>
+                    <li>47 testes com JUnit, Mockito e MockMvc</li>
+                </ul>
+                <a class="ButtonSend" href="https://github.com/daviddeniss/EcoGrid-Management" target="_blank" rel="noopener"><i class="fab fa-github"></i> Ver no GitHub</a>
+            </dialog>
+        </section>
 
         <section class="section-contact" id="contato">
             <div class="contact-wrapper" data-anime="up">
                 <div class="contact-left"></div>
                 <div class="contact-right">
                     <h1>contato</h1>
-                    <form class="form-contact">
-                        <div class="input-group">
-                            <input id="nome" type="text" class="field">
-                            <label  for="nome" class="field-label">Nome</label>
-                        </div>
-                        <div class="input-group">
-                            <input id="email" type="email" class="field">
-                            <label for="email" class="field-label">E-mail</label>
-                        </div>
-                        <div class="input-group">
-                            <textarea id="mensage" class="field"></textarea>
-                            <label for="mensage" class="field-label">Mensagem</label>
-                        </div>
-                        <button class="ButtonCustom" type="send">Enviar</button>
-                    </form>
+                    <p class="contact-intro">Estou aberto a vagas de Engenharia de Software e Ciência de Dados. Fale comigo pelo canal que preferir.</p>
+                    <ul class="contact-list">
+                        <li>
+                            <a class="contact-item" href="mailto:daviddeniss.cavalcante@gmail.com">
+                                <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                                <span class="contact-text">
+                                    <span class="contact-label">E-mail</span>
+                                    <span class="contact-value">daviddeniss.cavalcante@gmail.com</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="contact-item" href="https://wa.me/5511977945929" target="_blank" rel="noopener">
+                                <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                                <span class="contact-text">
+                                    <span class="contact-label">Telefone / WhatsApp</span>
+                                    <span class="contact-value">(11) 97794-5929</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="contact-item" href="https://www.linkedin.com/in/david-denis-c-4490b6132/" target="_blank" rel="noopener">
+                                <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
+                                <span class="contact-text">
+                                    <span class="contact-label">LinkedIn</span>
+                                    <span class="contact-value">David Denis</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="contact-item" href="https://github.com/daviddeniss" target="_blank" rel="noopener">
+                                <span class="contact-icon"><i class="fab fa-github"></i></span>
+                                <span class="contact-text">
+                                    <span class="contact-label">GitHub</span>
+                                    <span class="contact-value">github.com/daviddeniss</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
         
-        <section class="section-budget" id="orcamento">
-            <div class="box"></div>
-            <div class="budget-wrapper">
-                <div class="header-budget" data-anime="left">
-                    <h1>Faça seu orçamento</h1>
-                </div>
-                
-                <form class="form-budget">
-                    
-                    <div class="qtde-page" data-anime="right" >
-                        <label for="qtde">Quantidade de páginas:</label> 
-                        <input type="number" name="qtde" id="qtde" min="1" max="100"> <br/><br/>
-                        <label for="js">Preciso de um script JS:</label>
-                        <input class="check" checked="" type="checkbox" name="js" id="js"> <br/><br/><br/> 
-                    </div>
-                    
-                    
-                    <div class="group-layout" data-anime="up">
-                        <label>Layout</label> 
-                        <div>
-                            <input type="radio" name="layout" id="layout-sim">
-                            <label for="layout-sim">Sim, preciso de um layout</label>
-                        </div>
-                        <div>
-                            <input type="radio" name="layout" id="layout-nao">
-                            <label for="layout-não">Não preciso de um layout</label>
-                        </div><br/>
-                        
-                        <div>
-                            <label for="prazo">Prazo</label>
-                            <input type="range" name="prazo" id="prazo" min="1" max="10">
-                        </div>
-                        
-                        <div class="btn">
-                            <button type="submit" id="envio-form-orc" class="ButtonCustom">enviar</button>
-                        </div>
-                        
-                        <label id="preco"> R$ 0,00</label>
-                        
-                    </div>
-                     
-                </form>
-        </section> 
-
         <footer>
             <div class="footer--area">
-                <div class="footer--item area1">
-                    <div class="footer-social">
-                        <a href=""><img src="assets/images/twitter.png" /></a>
-                        <a href=""><img src="assets/images/linkedin.png" /></a>
-                        <a href=""><img src="assets/images/facebook.png" /></a>
-                        <a href=""><img src="assets/images/googleplus.png" /></a>
-                        <a href=""><img src="assets/images/pinterest.png" /></a>
-                    </div>
-                </div>
-                <div class="footer--item area2">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique esse aperiam tempora ad molestias expedita reprehenderit aliquam, earum optio inventore quos! Quos porro voluptas itaque ratione enim esse blanditiis reprehenderit.</p>
-                </div>
-                <div class="footer--item area3">
-                    <form method="POST" id="send-email">
-                        <input id="email" type="email" name="email" placeholder="EMAIL TO SUBSCRIBE" autocomplete="email" />
-                        <button class="button" form="send-email">Subscribe</button>
-                    </form>
+                <p>&copy; 2026 David Denis · Feito com HTML, CSS e JavaScript</p>
+                <div class="footer-social">
+                    <a href="https://github.com/daviddeniss" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/david-denis-c-4490b6132/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </footer>
